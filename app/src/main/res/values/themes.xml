@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema base Material3 (puedes ajustar colores si quieres) -->
+    <style name="Theme.FormulariosComposeBase" parent="Theme.Material3.DayNight.NoActionBar" />
+
+    <!-- 
+      Tema base de la aplicación. 
+      Hereda de un tema de Material 3 y se aplica a tu aplicación
+      a través del AndroidManifest.xml.
+    -->
+    <style name="Theme.FormulariosCompose" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Puedes personalizar atributos aquí, como los colores de la barra de estado, etc. -->
+        <!-- 
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        -->
+    </style>
+</resources>
