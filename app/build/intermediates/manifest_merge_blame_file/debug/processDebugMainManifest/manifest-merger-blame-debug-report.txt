@@ -9,165 +9,165 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-feature
-11-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:3:5-85
+11-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:3:5-85
 12        android:name="android.hardware.camera"
-12-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:3:19-57
+12-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:3:19-57
 13        android:required="false" />
-13-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:3:58-82
+13-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:3:58-82
 14
 15    <uses-permission android:name="android.permission.CAMERA" />
-15-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:4:5-65
-15-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:4:22-62
+15-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:4:5-65
+15-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:4:22-62
 16    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-16-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:5:5-76
-16-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:5:22-73
+16-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:5:5-76
+16-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:5:22-73
 17
 18    <permission
-18-->[androidx.core:core:1.13.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+18-->[androidx.core:core:1.13.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
 19        android:name="com.example.formularioscompose.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-19-->[androidx.core:core:1.13.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+19-->[androidx.core:core:1.13.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
 20        android:protectionLevel="signature" />
-20-->[androidx.core:core:1.13.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+20-->[androidx.core:core:1.13.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
 21
 22    <uses-permission android:name="com.example.formularioscompose.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-22-->[androidx.core:core:1.13.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-22-->[androidx.core:core:1.13.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+22-->[androidx.core:core:1.13.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+22-->[androidx.core:core:1.13.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
 23
 24    <application
-24-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:7:5-33:19
+24-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:7:5-33:19
 25        android:allowBackup="true"
-25-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:8:9-35
+25-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:8:9-35
 26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-26-->[androidx.core:core:1.13.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+26-->[androidx.core:core:1.13.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\a55012001aa620e142c06fcc95f9f009\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 27        android:debuggable="true"
 28        android:extractNativeLibs="false"
 29        android:icon="@mipmap/ic_launcher"
-29-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:10:9-43
+29-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:10:9-43
 30        android:label="FormulariosComposeBase"
-30-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:9:9-47
+30-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:9:9-47
 31        android:roundIcon="@mipmap/ic_launcher_round"
-31-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:11:9-54
+31-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:11:9-54
 32        android:supportsRtl="true"
-32-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:12:9-35
+32-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:12:9-35
 33        android:testOnly="true"
 34        android:theme="@style/Theme.Material3.DayNight.NoActionBar" >
-34-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:13:9-68
+34-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:13:9-68
 35        <activity
-35-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:15:9-77
+35-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:15:9-77
 36            android:name="com.example.formularioscompose.SecondActivity"
-36-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:15:19-49
+36-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:15:19-49
 37            android:exported="false" />
-37-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:15:50-74
+37-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:15:50-74
 38        <activity
-38-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:17:9-22:20
+38-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:17:9-22:20
 39            android:name="com.example.formularioscompose.MainActivity"
-39-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:17:19-47
+39-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:17:19-47
 40            android:exported="true" >
-40-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:17:48-71
+40-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:17:48-71
 41            <intent-filter>
-41-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:18:13-21:29
+41-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:18:13-21:29
 42                <action android:name="android.intent.action.MAIN" />
-42-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:19:17-69
-42-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:19:25-66
+42-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:19:17-69
+42-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:19:25-66
 43
 44                <category android:name="android.intent.category.LAUNCHER" />
-44-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:20:17-77
-44-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:20:27-74
+44-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:20:17-77
+44-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:20:27-74
 45            </intent-filter>
 46        </activity>
 47
 48        <provider
 49            android:name="androidx.core.content.FileProvider"
-49-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:25:13-62
+49-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:25:13-62
 50            android:authorities="com.example.formularioscompose.fileprovider"
-50-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:26:13-64
+50-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:26:13-64
 51            android:exported="false"
-51-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:27:13-37
+51-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:27:13-37
 52            android:grantUriPermissions="true" >
-52-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:28:13-47
+52-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:28:13-47
 53            <meta-data
-53-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:29:13-31:54
+53-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:29:13-31:54
 54                android:name="android.support.FILE_PROVIDER_PATHS"
-54-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:30:17-67
+54-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:30:17-67
 55                android:resource="@xml/file_paths" />
-55-->C:\Users\fabia\Desktop\xzcxc\app\src\main\AndroidManifest.xml:31:17-51
+55-->C:\Users\villa\AndroidStudioProjects\PixelStore\app\src\main\AndroidManifest.xml:31:17-51
 56        </provider>
 57        <provider
-57-->[androidx.emoji2:emoji2:1.3.0] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+57-->[androidx.emoji2:emoji2:1.3.0] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
 58            android:name="androidx.startup.InitializationProvider"
-58-->[androidx.emoji2:emoji2:1.3.0] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+58-->[androidx.emoji2:emoji2:1.3.0] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
 59            android:authorities="com.example.formularioscompose.androidx-startup"
-59-->[androidx.emoji2:emoji2:1.3.0] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+59-->[androidx.emoji2:emoji2:1.3.0] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
 60            android:exported="false" >
-60-->[androidx.emoji2:emoji2:1.3.0] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+60-->[androidx.emoji2:emoji2:1.3.0] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
 61            <meta-data
-61-->[androidx.emoji2:emoji2:1.3.0] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+61-->[androidx.emoji2:emoji2:1.3.0] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
 62                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-62-->[androidx.emoji2:emoji2:1.3.0] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+62-->[androidx.emoji2:emoji2:1.3.0] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
 63                android:value="androidx.startup" />
-63-->[androidx.emoji2:emoji2:1.3.0] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+63-->[androidx.emoji2:emoji2:1.3.0] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\34015b1a63c4521df09a7cc806710b1f\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
 64            <meta-data
-64-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\9775532ea28180b71de1dc26ec64feda\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:29:13-31:52
+64-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\9775532ea28180b71de1dc26ec64feda\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:29:13-31:52
 65                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-65-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\9775532ea28180b71de1dc26ec64feda\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:30:17-78
+65-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\9775532ea28180b71de1dc26ec64feda\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:30:17-78
 66                android:value="androidx.startup" />
-66-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\9775532ea28180b71de1dc26ec64feda\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:31:17-49
+66-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\9775532ea28180b71de1dc26ec64feda\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:31:17-49
 67            <meta-data
-67-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+67-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
 68                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-68-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+68-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
 69                android:value="androidx.startup" />
-69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
 70        </provider>
 71
 72        <activity
-72-->[androidx.compose.ui:ui-tooling-android:1.7.5] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\a120a5256f7f9e80155fd9ff698de06e\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+72-->[androidx.compose.ui:ui-tooling-android:1.7.5] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\a120a5256f7f9e80155fd9ff698de06e\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
 73            android:name="androidx.compose.ui.tooling.PreviewActivity"
-73-->[androidx.compose.ui:ui-tooling-android:1.7.5] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\a120a5256f7f9e80155fd9ff698de06e\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+73-->[androidx.compose.ui:ui-tooling-android:1.7.5] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\a120a5256f7f9e80155fd9ff698de06e\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
 74            android:exported="true" />
-74-->[androidx.compose.ui:ui-tooling-android:1.7.5] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\a120a5256f7f9e80155fd9ff698de06e\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+74-->[androidx.compose.ui:ui-tooling-android:1.7.5] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\a120a5256f7f9e80155fd9ff698de06e\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
 75        <activity
-75-->[androidx.compose.ui:ui-test-manifest:1.7.5] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\5a82c63525fc43972d448c0d040a38cc\transformed\ui-test-manifest-1.7.5\AndroidManifest.xml:23:9-25:39
+75-->[androidx.compose.ui:ui-test-manifest:1.7.5] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\5a82c63525fc43972d448c0d040a38cc\transformed\ui-test-manifest-1.7.5\AndroidManifest.xml:23:9-25:39
 76            android:name="androidx.activity.ComponentActivity"
-76-->[androidx.compose.ui:ui-test-manifest:1.7.5] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\5a82c63525fc43972d448c0d040a38cc\transformed\ui-test-manifest-1.7.5\AndroidManifest.xml:24:13-63
+76-->[androidx.compose.ui:ui-test-manifest:1.7.5] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\5a82c63525fc43972d448c0d040a38cc\transformed\ui-test-manifest-1.7.5\AndroidManifest.xml:24:13-63
 77            android:exported="true" />
-77-->[androidx.compose.ui:ui-test-manifest:1.7.5] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\5a82c63525fc43972d448c0d040a38cc\transformed\ui-test-manifest-1.7.5\AndroidManifest.xml:25:13-36
+77-->[androidx.compose.ui:ui-test-manifest:1.7.5] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\5a82c63525fc43972d448c0d040a38cc\transformed\ui-test-manifest-1.7.5\AndroidManifest.xml:25:13-36
 78
 79        <receiver
-79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
 80            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
 81            android:directBootAware="false"
-81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
 82            android:enabled="true"
-82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
 83            android:exported="true"
-83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
 84            android:permission="android.permission.DUMP" >
-84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
 85            <intent-filter>
-85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
 86                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
 87            </intent-filter>
 88            <intent-filter>
-88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
 89                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
 90            </intent-filter>
 91            <intent-filter>
-91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
 92                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
 93            </intent-filter>
 94            <intent-filter>
-94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
 95                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\fabia\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\villa\.gradle\caches\9.0-milestone-1\transforms\6e83ed9db5d572638953c4500927cca0\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
 96            </intent-filter>
 97        </receiver>
 98    </application>
