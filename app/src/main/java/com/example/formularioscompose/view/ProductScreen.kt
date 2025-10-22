@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Image
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.*
@@ -76,14 +77,18 @@ fun ProductItem(product: Product, onAddToCart: () -> Unit) {
 fun ProductScreen(navController: NavController) {
     Scaffold(
         topBar = {
-            TopAppBar(
+            //Centrar perfil
+            CenterAlignedTopAppBar(
                 title = { Text("PixelStore") },
                 actions = {
-                    IconButton(onClick = { /* TODO: Navegar a la pantalla del carrito */ }) {
-                        Icon(Icons.Default.ShoppingCart, contentDescription = "Carrito de compras")
+                    IconButton(onClick = { /* TODO: Carrito */ }) {
+                        Icon(Icons.Default.ShoppingCart, contentDescription = "Carrito")
+                    }
+                    IconButton(onClick = { navController.navigate("perfil") }) {
+                        Icon(Icons.Default.AccountCircle, contentDescription = "Ver Perfil")
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     titleContentColor = MaterialTheme.colorScheme.onPrimary,
                     actionIconContentColor = MaterialTheme.colorScheme.onPrimary
