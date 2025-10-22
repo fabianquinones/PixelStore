@@ -7,7 +7,8 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier // Corregido: Importación correcta
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -16,6 +17,8 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.formularioscompose.data.UserPreferencesRepository
+import kotlinx.coroutines.launch
 
 @Suppress("DEPRECATION")
 @Composable
@@ -24,11 +27,12 @@ fun InicioSesion(navController: NavController) {
     var password by remember { mutableStateOf("") }
     var emailError by remember { mutableStateOf<String?>(null) }
     var passwordError by remember { mutableStateOf<String?>(null) }
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    val dataStore = UserPreferencesRepository(context)
 
-    // SOLUCIÓN AÑADIDA: Un Surface para pintar el fondo de la pantalla
     Surface(
         modifier = Modifier.fillMaxSize(),
-        // El color se hereda automáticamente del tema, ¡no se necesita especificar!
         color = MaterialTheme.colorScheme.background
     ) {
         Column(
@@ -84,10 +88,11 @@ fun InicioSesion(navController: NavController) {
                     passwordError = null
                     var hasErrors = false
 
+                    // ... (validaciones de email y password) ...
                     if (email.isBlank()) {
                         emailError = "El correo no puede estar vacío"
                         hasErrors = true
-                    } else if (!"@".toRegex().containsMatchIn(email)) { // Forma más robusta de verificar
+                    } else if (!"@".toRegex().containsMatchIn(email)) {
                         emailError = "El formato del correo no es válido"
                         hasErrors = true
                     }
@@ -101,6 +106,11 @@ fun InicioSesion(navController: NavController) {
                     }
 
                     if (!hasErrors) {
+
+                        scope.launch {
+                            dataStore.saveLoginState(true)
+                        }
+
                         navController.navigate("ProductScreen") {
                             popUpTo("InicioSesion") { inclusive = true }
                         }
@@ -115,6 +125,7 @@ fun InicioSesion(navController: NavController) {
 
             Spacer(modifier = Modifier.height(16.dp))
             ClickableText(
+
                 text = buildAnnotatedString {
                     withStyle(style = SpanStyle(color = MaterialTheme.colorScheme.onBackground)) {
                         append("¿No tienes una cuenta? ")
@@ -125,7 +136,7 @@ fun InicioSesion(navController: NavController) {
                 },
                 onClick = {
 
-                    if (it >= 23) { // 23 es la longitud de "¿No tienes una cuenta? "
+                    if (it >= 23) {
                         navController.navigate("FormularioScreen")
                     }
                 }
@@ -133,3 +144,4 @@ fun InicioSesion(navController: NavController) {
         }
     }
 }
+
