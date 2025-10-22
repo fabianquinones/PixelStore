@@ -1,4 +1,4 @@
-// Demo de DataStore + animación (no enlazada en el NavHost por defecto)
+
 package com.example.formularioscompose.view
 
 import androidx.compose.animation.AnimatedVisibility
@@ -26,7 +26,7 @@ fun PantallaPrincipal(vm: EstadoViewModel = viewModel()) {
     } else {
         val activo = estado.value!!
         val colorAnimado by animateColorAsState(
-            targetValue = if (activo) Color(0xFF4CAF50) else Color(0xFFB0BEC5),
+            targetValue = if (activo) Color(0xFF4CAF50) else Color(0xFF000000),
             animationSpec = tween(500), label = "colorModo"
         )
         val textoBoton = if (activo) "Desactivar" else "Activar"

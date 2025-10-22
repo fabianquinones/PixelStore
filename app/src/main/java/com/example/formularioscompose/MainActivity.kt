@@ -3,13 +3,12 @@ package com.example.formularioscompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.formularioscompose.view.theme.FormulariosComposeTheme
 import com.example.formularioscompose.view.FormularioScreen
 import com.example.formularioscompose.view.PerfilScreen
 import com.example.formularioscompose.view.ResumenScreen
@@ -21,7 +20,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MaterialTheme {
+            FormulariosComposeTheme {
                 AppNav()
             }
         }

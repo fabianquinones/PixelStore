@@ -9,6 +9,7 @@
       a través del AndroidManifest.xml.
     -->
     <style name="Theme.FormulariosCompose" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">#121212</item>
         <!-- Puedes personalizar atributos aquí, como los colores de la barra de estado, etc. -->
         <!-- 
         <item name="android:statusBarColor">@android:color/transparent</item>
