@@ -9,10 +9,23 @@ import androidx.navigation.NavController
 import com.example.formularioscompose.viewmodel.UsuarioViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.Alignment
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 
 @Composable
 fun FormularioScreen(navController: NavController, viewModel: UsuarioViewModel) {
     val estado by viewModel.estado.collectAsStateWithLifecycle()
+
+    // Estados locales para visibilidad de las contraseñas
+    var claveVisible by remember { mutableStateOf(false) }
+    var confirmarVisible by remember { mutableStateOf(false) }
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -24,6 +37,12 @@ fun FormularioScreen(navController: NavController, viewModel: UsuarioViewModel) 
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
+            Text(
+                text = "Formulario de Registro",
+                style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
             OutlinedTextField(
                 value = estado.nombre,
                 onValueChange = viewModel::onNombreChange,
@@ -32,6 +51,7 @@ fun FormularioScreen(navController: NavController, viewModel: UsuarioViewModel) 
                 supportingText = { estado.errores.nombre?.let { Text(it, color = MaterialTheme.colorScheme.error) } },
                 modifier = Modifier.fillMaxWidth()
             )
+
             OutlinedTextField(
                 value = estado.correo,
                 onValueChange = viewModel::onCorreoChange,
@@ -40,14 +60,49 @@ fun FormularioScreen(navController: NavController, viewModel: UsuarioViewModel) 
                 supportingText = { estado.errores.correo?.let { Text(it, color = MaterialTheme.colorScheme.error) } },
                 modifier = Modifier.fillMaxWidth()
             )
+
+            // Campo de clave
             OutlinedTextField(
                 value = estado.clave,
                 onValueChange = viewModel::onClaveChange,
                 label = { Text("Clave") },
                 isError = estado.errores.clave != null,
                 supportingText = { estado.errores.clave?.let { Text(it, color = MaterialTheme.colorScheme.error) } },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                visualTransformation = if (claveVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                trailingIcon = {
+                    val image = if (claveVisible) Icons.Filled.VisibilityOff else Icons.Filled.Visibility
+                    IconButton(onClick = { claveVisible = !claveVisible }) {
+                        Icon(
+                            imageVector = image,
+                            contentDescription = if (claveVisible) "Ocultar clave" else "Mostrar clave"
+                        )
+                    }
+                }
             )
+
+            // Campo de confirmar clave
+            OutlinedTextField(
+                value = estado.confirmarClave,
+                onValueChange = viewModel::onConfirmarClaveChange,
+                label = { Text("Confirmar clave") },
+                isError = estado.errores.confirmarClave != null,
+                supportingText = { estado.errores.confirmarClave?.let { Text(it, color = MaterialTheme.colorScheme.error) } },
+                modifier = Modifier.fillMaxWidth(),
+                visualTransformation = if (confirmarVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                trailingIcon = {
+                    val image = if (confirmarVisible) Icons.Filled.VisibilityOff else Icons.Filled.Visibility
+                    IconButton(onClick = { confirmarVisible = !confirmarVisible }) {
+                        Icon(
+                            imageVector = image,
+                            contentDescription = if (confirmarVisible) "Ocultar clave" else "Mostrar clave"
+                        )
+                    }
+                }
+            )
+
             OutlinedTextField(
                 value = estado.direccion,
                 onValueChange = viewModel::onDireccionChange,
@@ -56,33 +111,44 @@ fun FormularioScreen(navController: NavController, viewModel: UsuarioViewModel) 
                 supportingText = { estado.errores.direccion?.let { Text(it, color = MaterialTheme.colorScheme.error) } },
                 modifier = Modifier.fillMaxWidth()
             )
+
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Checkbox(
                     checked = estado.aceptaTerminos,
                     onCheckedChange = viewModel::onAceptarTerminosChange,
-                    // Añadimos colores para que el Checkbox se vea bien en el tema oscuro
                     colors = CheckboxDefaults.colors(
                         checkedColor = MaterialTheme.colorScheme.primary,
                         uncheckedColor = MaterialTheme.colorScheme.onSurface
                     )
                 )
                 Spacer(Modifier.width(8.dp))
-                // El texto ya debería verse blanco, ya que hereda onBackground
                 Text("Acepto los términos y condiciones")
+            }
+            estado.errores.terminos?.let {
+                Text(
+                    text = it,
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodySmall
+                )
             }
             Button(
                 onClick = {
                     if (viewModel.validarFormulario()) {
-                        navController.navigate("resumen")
+                        viewModel.guardarUsuario()
+                        navController.navigate("RegistroExitosoScreen")
                     }
                 },
                 modifier = Modifier.fillMaxWidth()
-            ) { Text("Validar y continuar") }
+            ) {
+                Text("Validar y continuar")
+            }
 
             Button(
                 onClick = { navController.navigate("perfil") },
                 modifier = Modifier.fillMaxWidth()
-            ) { Text("Ir a Perfil (cámara/galería)") }
+            ) {
+                Text("Ir a Perfil (cámara/galería)")
+            }
         }
     }
 }

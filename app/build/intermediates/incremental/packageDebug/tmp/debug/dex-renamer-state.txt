@@ -1,14 +1,14 @@
-#Wed Oct 22 14:54:14 CLST 2025
-base.0=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.3=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.4=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.5=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.6=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
-base.7=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
-base.8=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.9=C\:\\Users\\villa\\AndroidStudioProjects\\PixelStore\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+#Mon Oct 27 04:09:32 CLST 2025
+base.0=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+base.3=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.5=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
+base.6=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+base.7=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+base.8=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.9=C\:\\Users\\fabia\\Desktop\\xzcxc\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=12/classes.dex
