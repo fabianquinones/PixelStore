@@ -85,21 +85,24 @@ class UsuarioViewModel(private val repo: PerfilRepositorio) : ViewModel() {
         }
     }
 
-    /** Carga los datos del usuario desde DataStore */
     fun cargarUsuario() {
         viewModelScope.launch {
-            repo.obtenerDatos().collect { datos ->
-                _estado.update {
-                    it.copy(
-                        nombre = datos["nombre"] ?: "",
-                        correo = datos["correo"] ?: "",
-                        clave = datos["clave"] ?: "",
-                        direccion = datos["direccion"] ?: ""
-                    )
+            repo.obtenerDatos().collect { lista ->
+                if (lista.isNotEmpty()) {
+                    val ultimo = lista.last() // mostramos el más reciente
+                    _estado.update {
+                        it.copy(
+                            nombre = ultimo.nombre,
+                            correo = ultimo.correo,
+                            clave = ultimo.clave,
+                            direccion = ultimo.direccion
+                        )
+                    }
                 }
             }
         }
     }
+
 
     /** Limpia los datos guardados (por ejemplo, al cerrar sesión) */
     fun limpiarDatos() {
@@ -107,4 +110,15 @@ class UsuarioViewModel(private val repo: PerfilRepositorio) : ViewModel() {
             repo.limpiar()
         }
     }
+    fun iniciarSesion(correoInput: String, claveInput: String, onResultado: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            repo.obtenerDatos().collect { listaUsuarios ->
+                val usuarioEncontrado = listaUsuarios.any {
+                    it.correo == correoInput && it.clave == claveInput
+                }
+                onResultado(usuarioEncontrado)
+            }
+        }
+    }
+
 }

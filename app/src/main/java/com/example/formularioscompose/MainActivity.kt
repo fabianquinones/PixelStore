@@ -33,11 +33,11 @@ class MainActivity : ComponentActivity() {
 fun AppNav() {
     val navController = rememberNavController()
 
-    // ✅ Inicializamos el ViewModel manualmente con el repositorio y el contexto actual
+    // Inicializamos el ViewModel
     val context = LocalContext.current
     val usuarioViewModel = remember { UsuarioViewModel(PerfilRepositorio(context)) }
 
-    // ✅ Definimos las rutas de navegación
+    // Definimos las rutas de navegación
     NavHost(navController = navController, startDestination = "InicioSesion") {
 
         composable("InicioSesion") {
