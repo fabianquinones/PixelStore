@@ -1,5 +1,6 @@
 # Android / Gradle
 .gradle/
+!/gradle/wrapper/gradle-wrapper.jar
 /build/
 /app/build/
 local.properties
