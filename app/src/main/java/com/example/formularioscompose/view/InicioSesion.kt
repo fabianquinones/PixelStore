@@ -4,11 +4,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -17,19 +14,19 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.formularioscompose.data.UserPreferencesRepository
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.formularioscompose.repository.PerfilRepositorio
+import com.example.formularioscompose.viewmodel.InicioSesionViewModel
 import kotlinx.coroutines.launch
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.remember
 
-@Suppress("DEPRECATION")
 @Composable
 fun InicioSesion(navController: NavController) {
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
-    var emailError by remember { mutableStateOf<String?>(null) }
-    var passwordError by remember { mutableStateOf<String?>(null) }
     val context = LocalContext.current
+    val viewModel = remember { InicioSesionViewModel(PerfilRepositorio(context)) }
+    val estado by viewModel.estado.collectAsStateWithLifecycle()
     val scope = rememberCoroutineScope()
-    val dataStore = UserPreferencesRepository(context)
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -50,69 +47,40 @@ fun InicioSesion(navController: NavController) {
             Spacer(modifier = Modifier.height(32.dp))
 
             OutlinedTextField(
-                value = email,
-                onValueChange = {
-                    email = it
-                    emailError = null
-                },
+                value = estado.email,
+                onValueChange = viewModel::onEmailChange,
                 label = { Text("Correo Electrónico") },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
-                isError = emailError != null,
-                supportingText = {
-                    emailError?.let { Text(it) }
-                }
+                isError = estado.emailError != null,
+                supportingText = { estado.emailError?.let { Text(it) } }
             )
             Spacer(modifier = Modifier.height(16.dp))
 
             OutlinedTextField(
-                value = password,
-                onValueChange = {
-                    password = it
-                    passwordError = null
-                },
+                value = estado.password,
+                onValueChange = viewModel::onPasswordChange,
                 label = { Text("Contraseña") },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
                 visualTransformation = PasswordVisualTransformation(),
-                isError = passwordError != null,
-                supportingText = {
-                    passwordError?.let { Text(it) }
-                }
+                isError = estado.passwordError != null,
+                supportingText = { estado.passwordError?.let { Text(it) } }
             )
+
             Spacer(modifier = Modifier.height(24.dp))
 
             Button(
                 onClick = {
-                    emailError = null
-                    passwordError = null
-                    var hasErrors = false
-
-                    // ... (validaciones de email y password) ...
-                    if (email.isBlank()) {
-                        emailError = "El correo no puede estar vacío"
-                        hasErrors = true
-                    } else if (!"@".toRegex().containsMatchIn(email)) {
-                        emailError = "El formato del correo no es válido"
-                        hasErrors = true
-                    }
-
-                    if (password.isBlank()) {
-                        passwordError = "La contraseña no puede estar vacía"
-                        hasErrors = true
-                    } else if (password.length < 8) {
-                        passwordError = "La contraseña debe tener al menos 8 caracteres"
-                        hasErrors = true
-                    }
-
-                    if (!hasErrors) {
-
+                    if (viewModel.validarCampos()) {
                         scope.launch {
-                            dataStore.saveLoginState(true)
-                        }
-
-                        navController.navigate("ProductScreen") {
-                            popUpTo("InicioSesion") { inclusive = true }
+                            viewModel.iniciarSesion { exito ->
+                                if (exito) {
+                                    navController.navigate("ProductScreen") {
+                                        popUpTo("InicioSesion") { inclusive = true }
+                                    }
+                                }
+                            }
                         }
                     }
                 },
@@ -120,22 +88,35 @@ fun InicioSesion(navController: NavController) {
                     .fillMaxWidth()
                     .height(60.dp)
             ) {
-                Text(text = "Iniciar Sesion", fontSize = 18.sp)
+                Text(text = "Iniciar Sesión", fontSize = 18.sp)
+            }
+
+            estado.loginError?.let {
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = it,
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodyMedium
+                )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
-            ClickableText(
 
+            ClickableText(
                 text = buildAnnotatedString {
                     withStyle(style = SpanStyle(color = MaterialTheme.colorScheme.onBackground)) {
                         append("¿No tienes una cuenta? ")
                     }
-                    withStyle(style = SpanStyle(color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)) {
+                    withStyle(
+                        style = SpanStyle(
+                            color = MaterialTheme.colorScheme.primary,
+                            fontWeight = FontWeight.Bold
+                        )
+                    ) {
                         append("Regístrate aquí")
                     }
                 },
                 onClick = {
-
                     if (it >= 23) {
                         navController.navigate("FormularioScreen")
                     }
@@ -144,4 +125,3 @@ fun InicioSesion(navController: NavController) {
         }
     }
 }
-

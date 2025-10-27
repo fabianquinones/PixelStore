@@ -64,6 +64,9 @@ dependencies {
 
     // DataStore
     implementation("androidx.datastore:datastore-preferences:1.1.1")
+    // Gson para guardar mas de un usuario
+    implementation("com.google.code.gson:gson:2.10.1")
+
 
     // Coil + activity-ktx
     implementation("io.coil-kt:coil-compose:2.7.0")

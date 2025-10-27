@@ -5,10 +5,7 @@ import android.content.pm.PackageManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Button
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,38 +14,38 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.formularioscompose.repository.PerfilRepositorio
 import com.example.formularioscompose.view.components.ImagenInteligente
 import com.example.formularioscompose.viewmodel.PerfilViewModel
-import com.example.formularioscompose.viewmodel.UsuarioViewModel // <-- 1. IMPORTAMOS EL VIEWMODEL DEL USUARIO
+import com.example.formularioscompose.viewmodel.UsuarioViewModel
 
 @Composable
-fun PerfilScreen(
-    // 2. AÑADIMOS LOS DOS VIEWMODELS COMO PARÁMETROS
-    perfilViewModel: PerfilViewModel = viewModel(),
-    usuarioViewModel: UsuarioViewModel = viewModel()
-) {
+fun PerfilScreen() {
     val context = LocalContext.current
-    // Obtenemos el estado de la imagen desde PerfilViewModel
+
+    val usuarioViewModel = remember { UsuarioViewModel(PerfilRepositorio(context)) }
+    val perfilViewModel = remember { PerfilViewModel() }
+
+
+    LaunchedEffect(Unit) {
+        usuarioViewModel.cargarUsuario()
+    }
+
     val imagenUri by perfilViewModel.imagenUri.collectAsState()
-    // Obtenemos el estado de los datos desde UsuarioViewModel
     val estadoUsuario by usuarioViewModel.estado.collectAsStateWithLifecycle()
 
-    // --- Launchers para la cámara y galería (sin cambios) ---
+
+    // Launchers
     val pickImageLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
     ) { uri ->
-        if (uri != null) {
-            perfilViewModel.setImage(uri)
-        }
+        if (uri != null) perfilViewModel.setImage(uri)
     }
 
     val takePictureLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.TakePicture()
     ) { success ->
-        if (success) {
-            perfilViewModel.guardarImagenDeCamara()
-        }
+        if (success) perfilViewModel.guardarImagenDeCamara()
     }
 
     val requestCameraPermission = rememberLauncherForActivityResult(
@@ -60,52 +57,64 @@ fun PerfilScreen(
         }
     }
 
-    // --- Interfaz de usuario ---
+    // UI
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
         Column(
-            modifier = Modifier.fillMaxSize().padding(16.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Mostramos la imagen del perfil
             ImagenInteligente(imagenUri)
             Spacer(Modifier.height(24.dp))
 
-            // 3. MOSTRAMOS LOS DATOS DEL USUARIO LOGUEADO
-            Text(
-                text = estadoUsuario.nombre,
-                style = MaterialTheme.typography.headlineMedium,
-                textAlign = TextAlign.Center
-            )
-            Spacer(Modifier.height(8.dp))
-            Text(
-                text = estadoUsuario.correo,
-                style = MaterialTheme.typography.bodyLarge,
-                textAlign = TextAlign.Center
-            )
-            Text(
-                text = estadoUsuario.direccion,
-                style = MaterialTheme.typography.bodyMedium,
-                textAlign = TextAlign.Center
-            )
+            // ✅ Mostrar datos del usuario (control de null)
+            if (estadoUsuario.nombre.isNotBlank()) {
+                Text(
+                    text = estadoUsuario.nombre,
+                    style = MaterialTheme.typography.headlineMedium,
+                    textAlign = TextAlign.Center
+                )
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    text = estadoUsuario.correo,
+                    style = MaterialTheme.typography.bodyLarge,
+                    textAlign = TextAlign.Center
+                )
+                Text(
+                    text = estadoUsuario.direccion,
+                    style = MaterialTheme.typography.bodyMedium,
+                    textAlign = TextAlign.Center
+                )
+            } else {
+                Text(
+                    text = "No hay usuario cargado",
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodyMedium,
+                    textAlign = TextAlign.Center
+                )
+            }
 
-            Spacer(Modifier.height(32.dp)) // Espacio más grande antes de los botones
+            Spacer(Modifier.height(32.dp))
 
-            // Botones para cambiar la foto
             Button(
                 onClick = { pickImageLauncher.launch("image/*") },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text("Seleccionar desde galería")
             }
+
             Spacer(Modifier.height(12.dp))
 
             Button(
                 onClick = {
                     val permission = Manifest.permission.CAMERA
-                    if (ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED) {
+                    if (ContextCompat.checkSelfPermission(context, permission)
+                        == PackageManager.PERMISSION_GRANTED
+                    ) {
                         val uri = perfilViewModel.crearUriParaCamara(context)
                         takePictureLauncher.launch(uri)
                     } else {

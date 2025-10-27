@@ -1,0 +1,25 @@
+# Android / Gradle
+.gradle/
+!/gradle/wrapper/gradle-wrapper.jar
+/build/
+/app/build/
+local.properties
+*.iml
+.idea/
+
+# Generated files
+*.apk
+*.ap_
+*.dex
+*.class
+*.log
+/captures/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Misc
+.DS_Store
+.externalNativeBuild/
+.cxx/

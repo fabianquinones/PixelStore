@@ -1,14 +1,20 @@
 package com.example.formularioscompose.repository
 
-import android.net.Uri
-import com.example.formularioscompose.model.PerfilDeUsuario
+import android.content.Context
+import kotlinx.coroutines.flow.Flow
 
-class PerfilRepositorio {
-    private var perfilActual = PerfilDeUsuario(1, "Usuario", null)
+class PerfilRepositorio(context: Context) {
 
-    fun getProfile(): PerfilDeUsuario = perfilActual
+    private val prefs = UsuarioPreferences(context)
 
-    fun updateImage(uri: Uri?) {
-        perfilActual = perfilActual.copy(imagenUri = uri)
+    suspend fun guardarDatos(nombre: String, correo: String, clave: String, direccion: String) {
+        val usuario = Usuario(nombre, correo, clave, direccion)
+        prefs.guardarUsuario(usuario)
+    }
+
+    fun obtenerDatos(): Flow<List<Usuario>> = prefs.obtenerUsuarios
+
+    suspend fun limpiar() {
+        prefs.limpiarDatos()
     }
 }
