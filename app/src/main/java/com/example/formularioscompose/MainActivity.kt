@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.formularioscompose.repository.PerfilRepositorio
+import com.example.formularioscompose.view.CarritoScreen
 import com.example.formularioscompose.viewmodel.UsuarioViewModel
 import com.example.formularioscompose.view.theme.FormulariosComposeTheme
 import com.example.formularioscompose.view.FormularioScreen
@@ -58,6 +59,9 @@ fun AppNav() {
 
         composable("perfil") {
             PerfilScreen()
+        }
+        composable("carrito") {
+            CarritoScreen(navController = navController)
         }
     }
 }
