@@ -23,7 +23,6 @@ class PerfilViewModel : ViewModel() {
     fun setImage(uri: Uri?) {
         _imagenUri.value = uri
     }
-
     // --- NUEVA FUNCIÓN ---
     // Esta función crea una URI, la guarda internamente y la devuelve.
     // La pantalla la llamará para obtener la URI antes de lanzar la cámara.

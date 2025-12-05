@@ -14,7 +14,9 @@ data class Usuario(
     val nombre: String,
     val correo: String,
     val clave: String,
-    val direccion: String
+    val direccion: String,
+    val apellido: String,
+    val telefono: String
 )
 
 class UsuarioPreferences(private val context: Context) {
