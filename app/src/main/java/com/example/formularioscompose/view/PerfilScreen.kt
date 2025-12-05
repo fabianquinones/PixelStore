@@ -14,10 +14,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.formularioscompose.repository.PerfilRepositorio
 import com.example.formularioscompose.view.components.ImagenInteligente
 import com.example.formularioscompose.viewmodel.PerfilViewModel
 import com.example.formularioscompose.viewmodel.UsuarioViewModel
+import com.example.formularioscompose.viewmodel.FraseViewModel
 
 @Composable
 fun PerfilScreen() {
@@ -25,14 +27,18 @@ fun PerfilScreen() {
 
     val usuarioViewModel = remember { UsuarioViewModel(PerfilRepositorio(context)) }
     val perfilViewModel = remember { PerfilViewModel() }
+    val fraseViewModel: FraseViewModel = viewModel()
 
+    // Estados
+    val estadoUsuario by usuarioViewModel.estado.collectAsStateWithLifecycle()
+    val imagenUri by perfilViewModel.imagenUri.collectAsState()
+    val frase by fraseViewModel.frase.collectAsStateWithLifecycle()
+    val fraseError by fraseViewModel.error.collectAsStateWithLifecycle()
 
+    // Cargar usuario al entrar
     LaunchedEffect(Unit) {
         usuarioViewModel.cargarUsuario()
     }
-
-    val imagenUri by perfilViewModel.imagenUri.collectAsState()
-    val estadoUsuario by usuarioViewModel.estado.collectAsStateWithLifecycle()
 
 
     // Launchers
@@ -68,13 +74,14 @@ fun PerfilScreen() {
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            // FOTO / AVATAR
             ImagenInteligente(imagenUri)
             Spacer(Modifier.height(24.dp))
 
-            // ✅ Mostrar datos del usuario (control de null)
+            // DATOS DEL USUARIO
             if (estadoUsuario.nombre.isNotBlank()) {
                 Text(
-                    text = estadoUsuario.nombre,
+                    text = estadoUsuario.nombre + " " + estadoUsuario.apellido,
                     style = MaterialTheme.typography.headlineMedium,
                     textAlign = TextAlign.Center
                 )
@@ -82,6 +89,11 @@ fun PerfilScreen() {
                 Text(
                     text = estadoUsuario.correo,
                     style = MaterialTheme.typography.bodyLarge,
+                    textAlign = TextAlign.Center
+                )
+                Text(
+                    text = "+56"+" "+estadoUsuario.telefono,
+                    style = MaterialTheme.typography.bodyMedium,
                     textAlign = TextAlign.Center
                 )
                 Text(
@@ -98,8 +110,63 @@ fun PerfilScreen() {
                 )
             }
 
-            Spacer(Modifier.height(32.dp))
 
+            Spacer(Modifier.height(24.dp))
+            Divider()
+            Spacer(Modifier.height(8.dp))
+
+            // 🔹 API EXTERNA: FRASE DEL DÍA
+            Text(
+                text = "Frase del día (API externa)",
+                style = MaterialTheme.typography.titleMedium,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+            Spacer(Modifier.height(8.dp))
+
+            when {
+                fraseError != null -> {
+                    Text(
+                        text = fraseError ?: "",
+                        color = MaterialTheme.colorScheme.error,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(Modifier.height(8.dp))
+                    Button(
+                        onClick = { fraseViewModel.cargarFrase() },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text("Reintentar")
+                    }
+                }
+                frase != null -> {
+                    Text(
+                        text = "\"${frase!!.content}\"",
+                        style = MaterialTheme.typography.bodyLarge,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        text = "- ${frase!!.author}",
+                        style = MaterialTheme.typography.bodyMedium,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+                else -> {
+                    Text(
+                        text = "Cargando frase...",
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+            }
+
+            Spacer(Modifier.height(24.dp))
+
+            // BOTONES DE IMAGEN
             Button(
                 onClick = { pickImageLauncher.launch("image/*") },
                 modifier = Modifier.fillMaxWidth()

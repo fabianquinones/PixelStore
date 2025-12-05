@@ -1,6 +1,5 @@
 package com.example.formularioscompose.view
 
-
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -26,9 +25,10 @@ import coil.compose.AsyncImage
 import com.example.formularioscompose.viewmodel.CarritoViewModel
 import java.text.NumberFormat
 import java.util.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
 
-
-
+// ... (ProductItem Composable se mantiene igual)
 
 @Composable
 fun ProductItem(product: Product, onAddToCart: () -> Unit) {
@@ -83,8 +83,8 @@ fun ProductScreen(
     carritoViewModel: CarritoViewModel = viewModel()
 
 ) {
-
-    val productList by productViewModel.products.collectAsState()
+    // ⚠️ CAMBIO CLAVE: Recolectar el uiState completo que incluye isLoading y error.
+    val uiState by productViewModel.uiState.collectAsState()
 
     Scaffold(
         topBar = {
@@ -106,17 +106,56 @@ fun ProductScreen(
             )
         }
     ) { paddingValues ->
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
+        // ⚠️ CAMBIO CLAVE: Contenedor para manejar los 3 estados (Cargando, Error, Datos)
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues)
-                .padding(8.dp)
+                .padding(paddingValues),
+            contentAlignment = Alignment.Center
         ) {
-            items(productList) { product ->
-                ProductItem(product = product) {
-                    carritoViewModel.addProductToCart(product)
-                    println("Añadido al carrito: ${product.name}")
+            when {
+                // 1. ESTADO DE CARGA: Si isLoading es true
+                uiState.isLoading -> {
+                    CircularProgressIndicator(Modifier.align(Alignment.Center))
+                }
+
+                // 2. ESTADO DE ERROR: Si hay un mensaje de error
+                uiState.error != null -> {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(
+                            text = uiState.error ?: "Error desconocido",
+                            color = MaterialTheme.colorScheme.error,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Spacer(modifier = Modifier.height(16.dp))
+                        // Botón para reintentar la carga
+                        Button(onClick = productViewModel::loadProducts) {
+                            Text("Reintentar")
+                        }
+                    }
+                }
+
+                // 3. ESTADO DE DATOS: Si la lista de productos tiene elementos
+                uiState.products.isNotEmpty() -> {
+                    LazyVerticalGrid(
+                        columns = GridCells.Fixed(2),
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(8.dp),
+                        contentPadding = PaddingValues(bottom = 8.dp) // Añadir padding si es necesario
+                    ) {
+                        items(uiState.products) { product ->
+                            ProductItem(product = product) {
+                                carritoViewModel.addProductToCart(product)
+                                println("Añadido al carrito: ${product.name}")
+                            }
+                        }
+                    }
+                }
+
+                // 4. LISTA VACÍA (no hay error ni está cargando)
+                else -> {
+                    Text(text = "No se encontraron productos.")
                 }
             }
         }
